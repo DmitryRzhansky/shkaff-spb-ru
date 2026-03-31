@@ -1576,6 +1576,80 @@ a:hover { color: #FF8533; }
 }
 
 .kf-empty-hint { color: #94A3B8; font-size: .85rem; }
+
+/* ТЗ на переработку (чеклист из аудита) — в конце КФ */
+.kf-card--audit-tz .kf-card__head::before {
+  width: 64px;
+  background: linear-gradient(90deg, #1E6BFF 0%, #FF6B00 100%);
+}
+.kf-audit-tz-inner {
+  margin-top: 4px;
+}
+.kf-audit-tz-hero {
+  text-align: center;
+  padding: 22px 18px 26px;
+  margin-bottom: 22px;
+  background: linear-gradient(165deg, rgba(30, 107, 255, 0.1), rgba(255, 107, 0, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.kf-audit-tz-hero__kicker {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin: 0 0 8px;
+}
+.kf-audit-tz-hero__domain {
+  font-family: 'Fira Code', monospace;
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 600;
+  color: #F0F4FA;
+  margin: 0 0 10px;
+}
+.kf-audit-tz-hero__sub {
+  font-size: 0.82rem;
+  color: #94A3B8;
+  line-height: 1.55;
+  margin: 0 auto;
+  max-width: 40rem;
+}
+.kf-audit-tz-note {
+  margin-bottom: 24px;
+}
+.kf-audit-tz-grid {
+  align-items: stretch;
+}
+.kf-audit-tz-list > li {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.kf-audit-tz-li-title {
+  font-weight: 600;
+  color: #F0F4FA;
+  line-height: 1.35;
+}
+.kf-audit-tz-li-note {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #94A3B8;
+  line-height: 1.5;
+}
+.kf-audit-tz-li-note a {
+  color: #7eb8ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.kf-audit-tz-li-note a:hover {
+  color: #b8d4ff;
+}
+.kf-audit-tz-list--compact .kf-audit-tz-li-note {
+  font-size: 0.74rem;
+}
 .section-hdr {
   margin-bottom: 32px;
   padding: 0 0 24px;
@@ -3987,6 +4061,11 @@ div.rpt-sc-hidden-row--visible {
   scroll-margin-top: 100px;
 }
 
+/* ТЗ из аудита — внутри секции #kf-analysis */
+#kf-audit-tz {
+  scroll-margin-top: 100px;
+}
+
 .rpt-tz {
   font-size: 14px;
   line-height: 1.55;
@@ -4232,6 +4311,18 @@ div.rpt-sc-hidden-row--visible {
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+/* Две колонки: техника / коммерция (блок ТЗ в КФ-анализе) */
+.rpt-tz-gapmap.kf-audit-tz-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+@media (max-width: 900px) {
+  .rpt-tz-gapmap.kf-audit-tz-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .rpt-tz-gapmap__block {
@@ -7650,6 +7741,123 @@ div.rpt-sc-hidden-row--visible {
     
   </div>
   
+</section>
+
+
+
+<section class="kf-card kf-card--audit-tz js-reveal" id="kf-audit-tz">
+  <div class="kf-card__head">
+    <div class="kf-card__eyebrow"><i class="fa-solid fa-file-contract"></i> Дорожная карта</div>
+    <div class="kf-card__title">Техническое задание на переработку сайта</div>
+    <div class="kf-card__subtitle">
+      Сводный чеклист по результатам аудита: техническая часть (краулинг, разметка, заголовки) и коммерческие факторы контента и блоков на shkaff-spb.ru.
+      Пункты можно передавать в разработку и контент как приоритизируемый бэклог.
+    </div>
+  </div>
+
+  <div class="rpt-tz kf-audit-tz-inner">
+    <div class="kf-audit-tz-hero">
+      <p class="kf-audit-tz-hero__kicker">Чеклист переработки</p>
+      <p class="kf-audit-tz-hero__domain">shkaff-spb.ru</p>
+      <p class="kf-audit-tz-hero__sub">
+        Ниже — две колонки: сначала исправления, влияющие на индексацию и понимание страниц поисковыми системами,
+        затем элементы, которые усиливают доверие и конверсию в духе коммерческих факторов.
+      </p>
+    </div>
+
+    <p class="rpt-tz-note kf-audit-tz-note">
+      <strong class="rpt-tz-strong">Как читать документ.</strong>
+      Технические пункты закрывают типовые риски SEO: потерю страниц в выдаче, слабую релевантность заголовков, отсутствие структурированных данных.
+      Коммерческие — про полноту оффера: контакты, политики, визуальные и текстовые сигналы надёжности компании.
+    </p>
+
+    <div class="rpt-tz-gapmap kf-audit-tz-grid">
+      
+      <div class="rpt-tz-gapmap__block rpt-tz-gapmap__block--missing">
+        <div class="rpt-tz-gapmap__badge">Технические ошибки — исправить</div>
+        <ul class="rpt-tz-gapmap__list kf-audit-tz-list">
+          <li>
+            <span class="kf-audit-tz-li-title">Устранить <strong class="rpt-tz-strong">404</strong></span>
+            <span class="kf-audit-tz-li-note">
+              <a href="https://shkaff-spb.ru/page/?pageid=3946845&amp;projectid=889577" target="_blank" rel="noopener noreferrer">Страница с pageid</a>,
+              <a href="https://shkaff-spb.ru/uslugi-dizaynera-i-3d-modelirovanie" target="_blank" rel="noopener noreferrer">/uslugi-dizaynera-i-3d-modelirovanie</a>,
+              битый путь вида <code class="rpt-tz-inline-code">/page/\</code> — редиректы, восстановление контента или убрать внутренние ссылки.
+            </span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">ЧПУ: подчёркивание → дефис</span>
+            <span class="kf-audit-tz-li-note"><a href="https://shkaff-spb.ru/shkaff_raspashnoy" target="_blank" rel="noopener noreferrer">/shkaff_raspashnoy</a> — единый стиль URL (<code class="rpt-tz-inline-code">shkaff-raspashnoy</code>) и 301 со старого адреса.</span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title"><strong class="rpt-tz-strong">Title</strong> дублирует H1</span>
+            <span class="kf-audit-tz-li-note">
+              <a href="https://shkaff-spb.ru/shkaff8" target="_blank" rel="noopener noreferrer">/shkaff8</a>,
+              <a href="https://shkaff-spb.ru/shkaff9" target="_blank" rel="noopener noreferrer">/shkaff9</a>,
+              <a href="https://shkaff-spb.ru/shkaff11" target="_blank" rel="noopener noreferrer">/shkaff11</a> — title и H1 должны дополнять друг друга (разная формулировка, без полного копирования).
+            </span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Пустой <strong class="rpt-tz-strong">meta description</strong></span>
+            <span class="kf-audit-tz-li-note">
+              Заполнить для страниц с pageid, <a href="https://shkaff-spb.ru/konsultirovanie-i-zamer" target="_blank" rel="noopener noreferrer">/konsultirovanie-i-zamer</a>,
+              <a href="https://shkaff-spb.ru/uslugi-dizaynera-i-3d-modelirovanie" target="_blank" rel="noopener noreferrer">/uslugi-dizaynera-i-3d-modelirovanie</a> (после устранения 404 — уникальное описание под сниппет).
+            </span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Пустой <strong class="rpt-tz-strong">H1</strong></span>
+            <span class="kf-audit-tz-li-note">
+              <a href="https://shkaff-spb.ru/politika-konfedicialnocyi" target="_blank" rel="noopener noreferrer">Политика конфиденциальности</a>,
+              <a href="https://shkaff-spb.ru/nashi-raboty" target="_blank" rel="noopener noreferrer">/nashi-raboty</a>,
+              страница с pageid — задать один смысловой H1.
+            </span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Микроразметка <strong class="rpt-tz-strong">Product</strong></span>
+            <span class="kf-audit-tz-li-note">Карточки шкафов/услуг — schema.org Product (и Offer при наличии цены).</span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Микроразметка <strong class="rpt-tz-strong">отзывов</strong></span>
+            <span class="kf-audit-tz-li-note">Review / AggregateRating для блоков с реальными отзывами.</span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Микроразметка <strong class="rpt-tz-strong">вопрос — ответ</strong></span>
+            <span class="kf-audit-tz-li-note">FAQPage для FAQ с полными ответами в HTML.</span>
+          </li>
+          <li>
+            <span class="kf-audit-tz-li-title">Атрибуты <strong class="rpt-tz-strong">alt</strong> у изображений</span>
+            <span class="kf-audit-tz-li-note">Осмысленные alt для портфолио и товарных фото; декоративное — пустой alt.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="rpt-tz-gapmap__block rpt-tz-gapmap__block--untapped">
+        <div class="rpt-tz-gapmap__badge">Коммерческие факторы — добавить на сайт</div>
+        <ul class="rpt-tz-gapmap__list kf-audit-tz-list kf-audit-tz-list--compact">
+          <li><span class="kf-audit-tz-li-title">Название компании</span><span class="kf-audit-tz-li-note">Явно в шапке и подвале, согласовано с реквизитами.</span></li>
+          <li><span class="kf-audit-tz-li-title">Коммерческие разделы в меню</span><span class="kf-audit-tz-li-note">Понятные пункты ведут на услуги, каталог, заявку.</span></li>
+          <li><span class="kf-audit-tz-li-title">Политика конфиденциальности</span><span class="kf-audit-tz-li-note">Отдельная страница + ссылки из форм и подвала.</span></li>
+          <li><span class="kf-audit-tz-li-title">Раздел и блок «О компании»</span><span class="kf-audit-tz-li-note">В аудите п.4–5 — и навигационный раздел, и содержательное описание бренда.</span></li>
+          <li><span class="kf-audit-tz-li-title">Мессенджеры</span><span class="kf-audit-tz-li-note">WhatsApp, Telegram и т.п. — быстрый контакт с мобильных.</span></li>
+          <li><span class="kf-audit-tz-li-title">УТП на первом экране</span><span class="kf-audit-tz-li-note">Почему выбирают вас среди кухонь и шкафов СПб.</span></li>
+          <li><span class="kf-audit-tz-li-title">Соцсети</span><span class="kf-audit-tz-li-note">Иконки с рабочими ссылками на актуальные профили.</span></li>
+          <li><span class="kf-audit-tz-li-title">Контакты</span><span class="kf-audit-tz-li-note">Телефон, адрес, карта, режим — на видном месте.</span></li>
+          <li><span class="kf-audit-tz-li-title">Конверсионные формы и кнопки</span><span class="kf-audit-tz-li-note">Заявка, замер, расчёт — заметные CTA на ключевых страницах.</span></li>
+          <li><span class="kf-audit-tz-li-title">Кнопка обратного звонка</span><span class="kf-audit-tz-li-note">Отдельный триггер для «холодных» посетителей.</span></li>
+          <li><span class="kf-audit-tz-li-title">Текстовые отзывы и партнёры</span><span class="kf-audit-tz-li-note">Цитаты клиентов, логотипы партнёров — социальное доказательство.</span></li>
+          <li><span class="kf-audit-tz-li-title">Документация</span><span class="kf-audit-tz-li-note">Сертификаты, лицензии — сканы и краткие пояснения.</span></li>
+          <li><span class="kf-audit-tz-li-title">Каталог раскрывающийся</span><span class="kf-audit-tz-li-note">Меню/фильтр по типам шкафов без перегруза первого экрана.</span></li>
+          <li><span class="kf-audit-tz-li-title">Дни работы</span><span class="kf-audit-tz-li-note">График по дням недели рядом с часами и контактами.</span></li>
+          <li><span class="kf-audit-tz-li-title">Кнопка «Наверх»</span><span class="kf-audit-tz-li-note">Для длинных страниц каталога и портфолио.</span></li>
+          <li><span class="kf-audit-tz-li-title">Виджет консультанта</span><span class="kf-audit-tz-li-note">Онлайн-чат или аналог — снижение отказов.</span></li>
+          <li><span class="kf-audit-tz-li-title">Информация о компании</span><span class="kf-audit-tz-li-note">Расширенный блок: опыт, производство, география (п.18 аудита).</span></li>
+          <li><span class="kf-audit-tz-li-title">Реквизиты</span><span class="kf-audit-tz-li-note">ИНН, ОГРН, юр. адрес — в подвале или отдельной странице.</span></li>
+          <li><span class="kf-audit-tz-li-title">Команда</span><span class="kf-audit-tz-li-note">Лица компании — доверие к заказной мебели.</span></li>
+          <li><span class="kf-audit-tz-li-title">Баннер</span><span class="kf-audit-tz-li-note">Акция, сезонное предложение или главный CTA на главной.</span></li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
 </section>
   </div>
   
@@ -19662,7 +19870,7 @@ div.rpt-sc-hidden-row--visible {
       <div class="rpt-st-outline__row">
         <div class="rpt-st-outline__text">
           <span class="rpt-st-outline__title">По цвeту</span>
-          <span class="rpt-st-outline__url">/</span>
+          <span class="rpt-st-outline__url">/komodi/po-tsvetu</span>
         </div>
         
       </div>
@@ -19982,7 +20190,7 @@ div.rpt-sc-hidden-row--visible {
       <div class="rpt-st-outline__row">
         <div class="rpt-st-outline__text">
           <span class="rpt-st-outline__title">По cтилю</span>
-          <span class="rpt-st-outline__url">/</span>
+          <span class="rpt-st-outline__url">/po-stilyu</span>
         </div>
         
       </div>
@@ -22523,11 +22731,11 @@ div.rpt-sc-hidden-row--visible {
         
         {"id": 719, "t": "\u041f\u043e \u0444\u0430\u0441\u0430\u0434y", "u": "/komodi/po-fasadu", "qc": 0},
         
-        {"id": 723, "t": "\u041f\u043e \u0446\u0432e\u0442\u0443", "u": "/", "qc": 0},
+        {"id": 723, "t": "\u041f\u043e \u0446\u0432e\u0442\u0443", "u": "/komodi/po-tsvetu", "qc": 0},
         
         {"id": 733, "t": "\u041f\u043e \u0444\u0443\u043d\u043a\u0446\u0438\u043e\u043d\u0430\u043b\u0443", "u": "/komodi/po-funktsionalu", "qc": 0},
         
-        {"id": 739, "t": "\u041f\u043e c\u0442\u0438\u043b\u044e", "u": "/", "qc": 0}
+        {"id": 739, "t": "\u041f\u043e c\u0442\u0438\u043b\u044e", "u": "/po-stilyu", "qc": 0}
         
       ]
       
