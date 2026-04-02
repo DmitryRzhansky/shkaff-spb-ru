@@ -802,6 +802,28 @@ a:hover { color: #FF8533; }
   color: #FF6B00 !important;
   font-weight: 700;
 }
+.audit-comp-table--purchased-links tbody td {
+  white-space: normal;
+  vertical-align: top;
+}
+.audit-comp-table--purchased-links tbody td:first-child {
+  white-space: nowrap;
+  width: 1%;
+}
+.audit-comp-table--purchased-links tbody td a {
+  color: #7eb8ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.audit-comp-table--purchased-links tbody td a:hover {
+  color: #b8d4ff;
+}
+.audit-comp-table--purchased-links thead th:last-child,
+.audit-comp-table--purchased-links tbody td:last-child {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
 /* Горизонтальные бары — те же классы, что в КФ (.kf-vs-*), см. kf.css */
 .audit-comp-traffic {
   margin-top: 20px;
@@ -1649,6 +1671,20 @@ a:hover { color: #FF8533; }
 }
 .kf-audit-tz-list--compact .kf-audit-tz-li-note {
   font-size: 0.74rem;
+}
+.kf-card--purchased-links .kf-card__head::before {
+  width: 64px;
+  background: linear-gradient(90deg, #0d9488 0%, #1E6BFF 100%);
+}
+.kf-purchased-links__shot {
+  margin: 0 0 24px;
+}
+.kf-purchased-links__shot img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .section-hdr {
   margin-bottom: 32px;
@@ -7856,6 +7892,61 @@ div.rpt-sc-hidden-row--visible {
         </ul>
       </div>
       
+    </div>
+  </div>
+</section>
+
+<section class="kf-card kf-card--purchased-links js-reveal" id="kf-purchased-links">
+  <div class="kf-card__head">
+    <div class="kf-card__eyebrow"><i class="fa-solid fa-link"></i> Внешние публикации</div>
+    <div class="kf-card__title">Закуплены ссылки</div>
+    <div class="kf-card__subtitle">
+      Подтверждение размещения: скриншот из системы учёта и сводная таблица по анкорам и площадкам.
+    </div>
+  </div>
+
+  <div class="rpt-tz kf-audit-tz-inner">
+    <figure class="kf-purchased-links__shot">
+      <img src="shkaffi.png" width="1810" height="244" alt="Скриншот: статусы размещённых ссылок в системе учёта" loading="lazy" decoding="async">
+    </figure>
+
+    <div class="audit-comp-table-wrap">
+      <table class="audit-comp-table audit-comp-table--purchased-links">
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Анкор</th>
+            <th>Сайт</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>шкаф на заказ в Санкт-Петербурге</td>
+            <td><a href="https://4dekor.ru/" target="_blank" rel="noopener noreferrer">4dekor.ru</a></td>
+            <td>572&nbsp;₽</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>шкаф на заказ в Санкт-Петербурге</td>
+            <td><a href="https://shoptrip.ru/" target="_blank" rel="noopener noreferrer">shoptrip.ru</a></td>
+            <td>572&nbsp;₽</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>шкаф на заказ в Санкт-Петербурге</td>
+            <td><a href="https://100greats.ru/" target="_blank" rel="noopener noreferrer">100greats.ru</a></td>
+            <td>320&nbsp;₽</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>шкаф на заказ в Санкт-Петербурге</td>
+            <td><a href="https://service-profit.ru/" target="_blank" rel="noopener noreferrer">service-profit.ru</a></td>
+            <td>320&nbsp;₽</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
